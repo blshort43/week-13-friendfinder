@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
+// (app) calls module.exports = function(app) from api-routes.js & html-routes.js
+// not the same as the variable on line 9
 require('./app/routing/api-routes.js')(app); 
 require('./app/routing/html-routes.js')(app);
 

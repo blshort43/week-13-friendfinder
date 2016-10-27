@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = function (app){
-// routes to the main page and survey page
+// routes to the home page and survey page
 app.use(function(req, res) {
     res.sendFile(path.join(__dirname + '/../public/home.html'));
 });

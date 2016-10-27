@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="jumbotron">
+            <h1>Survey Questions</h1>
+            <hr>
+        </div>
+        <div class="row text-left">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div>
+                    <div class="panel-body">
+                        <form action="" method="POST" role="form">
+                            <div class="form-group">
+                                <h3>Question 1<h3>
+                                <h4>You like memes</h4>
+                                <select class="selectpicker">
+                                    <option></option>
+                                    <option>1 (Strongly Disagree)</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="text" class="form-control" id="email" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Unique ID</label>
+                                <input type="text" class="form-control" id="uniqueid" placeholder="">
+                            </div>
+                        </form>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-md" id="addBtn"> Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var tables = [];
+    var waiting = [];
+
+    $("#addBtn").on('click', function() {
+        console.log("Woooooo");
+        var new_cust = {
+
+            name: $('#name').val().trim(),
+            phoneNumber: $('#phone').val().trim(),
+            email: $('#email').val().trim(),
+            uniqueId: $('#uniqueid').val().trim()
+        };
+
+        if (tables.length < 5) {
+            tables.push(new_cust);
+            $.post('/customers', new_cust)
+                .done(function(data) {
+                    console.log(data);
+                });
+        } else {
+            waiting.push(new_cust);
+            $.post('/waiting', new_cust)
+                .done(function(data) {
+                    console.log(data);
+                });
+        }
+
+    });
+    </script>
+</body>
+
+</html>
