@@ -2,7 +2,7 @@ var friends = [
 {
   "name": "Brandon",
   "photo": "https://lh3.googleusercontent.com/-oNw_C69nPTM/VU5uwrsgmqI/AAAAAAAAHhY/kBuEenc-_mMAoAB2kug1GO3X0cZbD-fHQCEw/w280-h280-p/382a8a5.jpg",
-  "scores":[
+  "answers":[
      5,
      1,
      4,

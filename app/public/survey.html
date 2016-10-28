@@ -24,68 +24,189 @@
                     <div class="panel-body">
                         <form action="" method="POST" role="form">
                             <div class="form-group">
+                                <div class="form-group">
+                                    <h3>About You</h3>
+                                    <h4>Name (Required)</h4>
+                                    <input type="text" class="form-control" id="name" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <h4>Link to photo image (Required)</h4>
+                                    <input type="text" class="form-control" id="photo" placeholder="">
+                                </div>
                                 <h3>Question 1<h3>
                                 <h4>You like memes</h4>
-                                <select class="selectpicker">
+                                <select class="selectpicker" id="q1">
                                     <option></option>
-                                    <option>1 (Strongly Disagree)</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5 (Strongly Agree)</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Unique ID</label>
-                                <input type="text" class="form-control" id="uniqueid" placeholder="">
+                                <h3>Question 2<h3>
+                                <h4>You like coding hangman games</h4>
+                                <select class="selectpicker" id="q2">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 3<h3>
+                                <h4>You sometimes feelsbadman while doing homework</h4>
+                                <select class="selectpicker" id="q3">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 4<h3>
+                                <h4>You like video games</h4>
+                                <select class="selectpicker" id="q4">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 5<h3>
+                                <h4>You spend a lot of time on the internet</h4>
+                                <select class="selectpicker" id="q5">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 6<h3>
+                                <h4>You want to be a developer</h4>
+                                <select class="selectpicker" id="q6">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 7<h3>
+                                <h4>You like funky music</h4>
+                                <select class="selectpicker" id="q7">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 8<h3>
+                                <h4>You live in Austin, TX</h4>
+                                <select class="selectpicker" id="q8">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 9<h3>
+                                <h4>You own an Xbox 1</h4>
+                                <select class="selectpicker" id="q9">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                                <h3>Question 10<h3>
+                                <h4>You consider yourself to be awesome</h4>
+                                <select class="selectpicker" id="q10">
+                                    <option></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
                             </div>
                         </form>
                         <br>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-md" id="addBtn"> Submit</button>
+                        <div class="text-left">
+                            <button type="submit" class="btn btn-primary btn-md" id="submit"> Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-    var tables = [];
-    var waiting = [];
+    <div class="container">
 
-    $("#addBtn").on('click', function() {
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    <script>
+
+    $("#submit").on('click', function() {
         console.log("Woooooo");
-        var new_cust = {
+        var newFriend = {
 
             name: $('#name').val().trim(),
-            phoneNumber: $('#phone').val().trim(),
-            email: $('#email').val().trim(),
-            uniqueId: $('#uniqueid').val().trim()
+            photo: $('#photo').val().trim(),
+            answers: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
         };
 
-        if (tables.length < 5) {
-            tables.push(new_cust);
-            $.post('/customers', new_cust)
-                .done(function(data) {
-                    console.log(data);
-                });
-        } else {
-            waiting.push(new_cust);
-            $.post('/waiting', new_cust)
-                .done(function(data) {
-                    console.log(data);
-                });
+        if (!newFriend.name || !newFriend.photo){
+            alert("You must provide a name and photo!")
+        }else if (newFriend.answers.includes("")){
+            alert("You must complete all the questions!")
+
+        }else{
+
+            $.post('/api/friends', newFriend)
+
+
+            $.get("/api/friends", function(data) {
+                function diffArray() {
+                    var difference = [];
+                    for (i=0; i<newFriend.answers.length; i++) {
+                        difference.push(newFriend.answers[i] - data[0].answers[i]);
+                    }
+                    console.log(difference)
+                }
+                diffArray()
+            })
         }
 
+        console.log(newFriend);
+
     });
+
+
     </script>
 </body>
 
