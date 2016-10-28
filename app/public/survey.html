@@ -145,8 +145,6 @@
         </div>
     </div>
     <div class="container">
-
-
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -155,11 +153,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Your Bestest Friend Forever is:</h4>
         </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
+        <div id="matchName"></div>
+        <div id="matchPhoto"></div>
+        <div id="results"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -189,25 +187,44 @@
 
             $.post('/api/friends', newFriend)
 
+            newFriend.name = "";
+            newFriend.photo = "";
+            newFriend.answers= "";
+
 
             $.get("/api/friends", function(data) {
-                function diffArray() {
+                var sumsArray = [];
+                var dataLength = data.length;
+
+                function add(a, b) {
+                    return a + b;
+                }
+
+                (function differenceBetweenArrays(index) {
                     var difference = [];
                     for (i=0; i<newFriend.answers.length; i++) {
-                        difference.push(newFriend.answers[i] - data[0].answers[i]);
+                        difference.push(Math.abs(newFriend.answers[i] - data[index].answers[i]));
                     }
-                    console.log(difference)
-                }
-                diffArray()
-            })
+                    var sum = difference.reduce(add, 0);
+                        sumsArray.push(sum);
+                        index++;
+                    if (index < dataLength) {
+                        differenceBetweenArrays(index);
+                    }
+                })(0);
+
+                    var indexOfSmallestSum = sumsArray.indexOf(Math.min.apply(Math, sumsArray));
+                    console.log(indexOfSmallestSum);
+
+                    $("#matchName").text(data[indexOfSmallestSum].name);
+                    $("#matchPhoto").attr("src", data[indexOfSmallestSum].photo);
+                    $("#results").modal("show");
+                    $("#myModal").modal()
+            });
         }
 
-        console.log(newFriend);
-
     });
-
-
-    </script>
+</script>
 </body>
 
 </html>
