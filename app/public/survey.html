@@ -153,11 +153,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Your Bestest Friend Forever is:</h4>
+          <h4 class="modal-title text-center">Your Bestest Friend Forever is:</h4>
         </div>
-        <div id="matchName"></div>
-        <div id="matchPhoto"></div>
-        <div id="results"></div>
+            <div class="modal-body">
+            <div id="matchName" class="text-center"></div>
+            <img src="" id="matchPhoto" class="center-block" style="width: 300px; height: 264px;" >
+            <div id="results"></div>
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
@@ -185,13 +187,6 @@
 
         }else{
 
-            $.post('/api/friends', newFriend)
-
-            newFriend.name = "";
-            newFriend.photo = "";
-            newFriend.answers= "";
-
-
             $.get("/api/friends", function(data) {
                 var sumsArray = [];
                 var dataLength = data.length;
@@ -218,10 +213,15 @@
 
                     $("#matchName").text(data[indexOfSmallestSum].name);
                     $("#matchPhoto").attr("src", data[indexOfSmallestSum].photo);
-                    $("#results").modal("show");
-                    $("#myModal").modal()
+                    $("#myModal").modal("show");
+
+                    $('#name').val('');
+                    $('#photo').val('');
+                    $('.selectpicker').val('');
             });
         }
+
+                    $.post('/api/friends', newFriend)
 
     });
 </script>
